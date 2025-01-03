@@ -24,12 +24,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-9eq9^o7vj)yj6z99n$h*v7ugm+lt*!_f32c*25f-bj04)rmdu2'
+# SECRET_KEY = 'django-insecure-9eq9^o7vj)yj6z99n$h*v7ugm+lt*!_f32c*25f-bj04)rmdu2'
 
+SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = []
+DEBUG = os.environ.get("DEBUG","False").lower() == "true"
+
+# ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
@@ -99,12 +104,12 @@ DATABASES = {
     }
 }
 
-# database_url = os.environ.get("DATABASE_URL")
+database_url = os.environ.get("DATABASE_URL")
 
-# DATABASES["default"] = dj_database_url.parse(database_url)
+DATABASES["default"] = dj_database_url.parse(database_url)
 
 # DATABASES["default"] = dj_database_url.parse("your link of postgrel")
-DATABASES["default"] = dj_database_url.parse("postgresql://shiv_user:zAVyd3Hq2vdl5URXHdRq7YA4YSUJJ4yv@dpg-ctrqssjqf0us73djfpo0-a.oregon-postgres.render.com/shiv")
+# DATABASES["default"] = dj_database_url.parse("postgresql://shiv_user:zAVyd3Hq2vdl5URXHdRq7YA4YSUJJ4yv@dpg-ctrqssjqf0us73djfpo0-a.oregon-postgres.render.com/shiv")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -181,3 +186,59 @@ SIMPLE_JWT = {
 
 # 6 . run your backend and frontend and now the products you will add gets stored in your new database and
 #     old data will be removed ..
+
+
+# 7. now pushing in git -- if you have pushed your project backend in your repository only the bacend
+#    not your Env folder only your project folder you wanna push ok 
+
+# 8. Go to github then make new repository then make it come to your terminal of your project folder
+# 9. git init   ---> this will initialize and make .git folder 
+# Create the .gitignore file (manually):
+
+# Open a text editor, paste the ignore rules, and save it as .gitignore.
+
+# in .gitignore file save as allfiled and contents include 
+
+# Python bytecode files
+# *.pyc
+# *.pyo
+# __pycache__
+
+# # Virtual environment
+# /env/
+
+# # Database file (SQLite)
+# db.sqlite3
+
+# # Static files and media (optional)
+# static/
+# media/
+
+# # Log files
+# *.log
+
+# # macOS system files
+# .DS_Store
+
+# # IDE files (e.g., for JetBrains IDEs like PyCharm)
+# .idea/
+
+# # Translation files
+# *.pot
+# Add files to Git:
+
+
+# 10.
+
+# git add .
+# Commit the changes:
+
+# 11. git commit -m "Initial commit"
+# Create a repository on GitHub (or another Git service).
+
+# Add the remote repository:
+
+# 12.  git remote add origin https://github.com/your-username/your-repository.git
+# Push your code:
+
+# git push -u origin master   # or 'git push -u origin main'
