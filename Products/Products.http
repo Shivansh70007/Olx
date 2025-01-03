@@ -1,0 +1,17 @@
+POST http://127.0.0.1:8000/api/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "Shivansh",
+    "password": "goku1234"
+}
+
+# after generating
+
+###
+GET http://127.0.0.1:8000/api/products/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM2NzYyMjU4LCJpYXQiOjE3MzU4OTgyNTgsImp0aSI6IjRmNWY1YTY5YjNlYzRhYTBhYjIwMDM3MDVkMDlhMTU3IiwidXNlcl9pZCI6MX0.3BCIprsuNPzHrpWEm6RjjghC0D4QRli_2Gc7yjjVLwo
+###
+POST http://127.0.0.1:8000/api/products/create/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM2NzYyMjU4LCJpYXQiOjE3MzU4OTgyNTgsImp0aSI6IjRmNWY1YTY5YjNlYzRhYTBhYjIwMDM3MDVkMDlhMTU3IiwidXNlcl9pZCI6MX0.3BCIprsuNPzHrpWEm6RjjghC0D4QRli_2Gc7yjjVLwo
+
