@@ -14,7 +14,7 @@ from pathlib import Path
 
 from datetime import timedelta
 import os
-import dj_database_url   # needs to be imported for postgre in rneder
+import dj_database_url   # needs to be imported for postgre in render
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
